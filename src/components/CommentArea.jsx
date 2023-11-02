@@ -5,22 +5,12 @@ import Error from "./Error";
 import { useEffect, useState } from "react";
 
 const CommentArea = ({ imdbID }) => {
-  // state = {
-  //   // review: {
-  //   //   comment: "",
-  //   //   rate: "",
-  //   //   elementId: "",
-  //   // },
-  //   review: null,
-  //   loading: true,
-  //   error: false,
-  // };
   const [review, setReview] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   const getComments = () => {
-    // console.log(imdbID);
+    console.log("getcomments", imdbID);
     fetch(
       "https://striveschool-api.herokuapp.com/api/comments/" +
         // this.props.bookState,

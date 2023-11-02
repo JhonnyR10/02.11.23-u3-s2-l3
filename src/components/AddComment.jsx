@@ -83,12 +83,9 @@ const AddComment = ({ asin, getComments }) => {
           selected a book and try again!
         </Alert>
       )}
-      <Form
-        onSubmit={handleFormSubmit}
-        className="border border-success p-2 mt-2"
-      >
+      <Form onSubmit={handleFormSubmit} className=" p-2 mt-2">
         <Form.Group className="mb-3">
-          <Form.Label>Comment</Form.Label>
+          <Form.Label className="text-white">Comment</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter your comment"
@@ -109,7 +106,7 @@ const AddComment = ({ asin, getComments }) => {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>Rate</Form.Label>
+          <Form.Label className="text-white">Rate</Form.Label>
           <Form.Control
             type="text"
             placeholder="Rate"

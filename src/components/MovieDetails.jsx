@@ -47,7 +47,7 @@ const MovieDetails = () => {
   };
   console.log(listFilm.Poster);
   return (
-    <Container fluid className="px-3">
+    <Container fluid className="p-3">
       {loading && (
         <div className="d-flex justify-content-center mt-1">
           <Loading />
@@ -55,13 +55,13 @@ const MovieDetails = () => {
       )}
       {error && <Error show={showErrorModal} onHide={handleErrorClose} />}
 
-      <Row className="">
+      <Row className="justify-content-center">
         {/* {listFilm.map((film, index) => (
           <FilmImage key={index} film={film} />
         ))} */}
         <Col xs={3}>
           {listFilm && (
-            <Card>
+            <Card className="border-0">
               <Card.Img
                 variant="top"
                 src={listFilm.Poster}
@@ -83,7 +83,7 @@ const MovieDetails = () => {
             </Card>
           )}
         </Col>
-        <Col>
+        <Col xs={6}>
           <CommentArea imdbID={listFilm.imdbID} />
         </Col>
       </Row>
