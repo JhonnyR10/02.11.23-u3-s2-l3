@@ -72,6 +72,7 @@ const CommentArea = ({ imdbID }) => {
       getComments();
       setLoading(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [imdbID]);
 
   // console.log("LOSTATOPASSATO", this.props.stateSelected);

@@ -1,5 +1,5 @@
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
 import Error from "./Error";
@@ -40,6 +40,7 @@ const MovieDetails = () => {
 
   useEffect(() => {
     renderFilm();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleErrorClose = () => {
@@ -55,28 +56,34 @@ const MovieDetails = () => {
       )}
       {error && <Error show={showErrorModal} onHide={handleErrorClose} />}
 
-      <Row className="justify-content-center">
+      <Row className="justify-content-center mt-4">
         {/* {listFilm.map((film, index) => (
           <FilmImage key={index} film={film} />
         ))} */}
         <Col xs={3}>
           {listFilm && (
-            <Card className="border-0">
+            <Card className="border-0 text-white">
               <Card.Img
                 variant="top"
                 src={listFilm.Poster}
                 style={{ height: "500px" }}
               />
-              <Card.Body>
+              <Card.Body className="bg-black">
                 <Card.Title>{listFilm.Title}</Card.Title>
                 <Card.Text>{listFilm.Plot}</Card.Text>
               </Card.Body>
               <ListGroup className="list-group-flush">
-                <ListGroup.Item>Released : {listFilm.Released}</ListGroup.Item>
-                <ListGroup.Item>Genre : {listFilm.Genre}</ListGroup.Item>
-                <ListGroup.Item>Runtime : {listFilm.Runtime}</ListGroup.Item>
+                <ListGroup.Item className="bg-black text-white">
+                  Released : {listFilm.Released}
+                </ListGroup.Item>
+                <ListGroup.Item className="bg-black text-white">
+                  Genre : {listFilm.Genre}
+                </ListGroup.Item>
+                <ListGroup.Item className="bg-black text-white">
+                  Runtime : {listFilm.Runtime}
+                </ListGroup.Item>
               </ListGroup>
-              <Card.Body>
+              <Card.Body className="bg-black">
                 <Card.Link href="#">Card Link</Card.Link>
                 <Card.Link href="#">Another Link</Card.Link>
               </Card.Body>

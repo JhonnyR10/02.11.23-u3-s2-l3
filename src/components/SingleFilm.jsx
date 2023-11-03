@@ -68,9 +68,9 @@ class SingleFilm extends Component {
         )}
 
         <Row className="justify-content-around px-3">
-          {this.state.listFilm.map((film, index) => (
-            <FilmImage key={index} film={film} />
-          ))}
+          {this.state.listFilm
+            .map((film, index) => <FilmImage key={index} film={film} />)
+            .slice(0, 6)}
         </Row>
       </Container>
     );
